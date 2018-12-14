@@ -36,8 +36,8 @@ public class JavaSweeper extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    private Image getImage(){
-        ImageIcon icon = new ImageIcon("res/img/bomb.png");
+    private Image getImage(String name){
+        ImageIcon icon = new ImageIcon("res/img/"+name+".png");
         return icon.getImage();
     }
 }

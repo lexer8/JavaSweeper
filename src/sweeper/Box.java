@@ -16,5 +16,7 @@ public enum Box {
     CLOSED,
     FLAGED,
     BOMBED,
-    NOBOMB
+    NOBOMB;
+
+    public Object image;
 }

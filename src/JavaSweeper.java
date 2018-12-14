@@ -15,13 +15,13 @@ public class JavaSweeper extends JFrame {
     }
 
     private JavaSweeper() {
+        setImages();
         initPanel();
         initFrame();
     }
 
     private void initPanel() {
-        panel = new JPanel()
-        {
+        panel = new JPanel() {
             @Override
             protected void printComponent(Graphics g) {
                 super.printComponent(g);
@@ -43,8 +43,14 @@ public class JavaSweeper extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    private Image getImage(String name){
-        ImageIcon icon = new ImageIcon("res/img/"+name+".png");
+    private void setImages() {
+        for (Box box : Box.values()) {
+            box.image = getImage(box.name().toLowerCase());
+        }
+    }
+
+    private Image getImage(String name) {
+        ImageIcon icon = new ImageIcon("res/img/" + name + ".png");
         return icon.getImage();
     }
 }

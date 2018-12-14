@@ -1,3 +1,5 @@
+import sweeper.Box;
+
 import javax.swing.*;
 import java.awt.*;
 

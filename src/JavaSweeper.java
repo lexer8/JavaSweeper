@@ -15,8 +15,15 @@ public class JavaSweeper extends JFrame {
     }
 
     private void initPanel() {
-        panel = new JPanel();
-        panel.setPreferredSize(new Dimension(500,300));
+        panel = new JPanel()
+        {
+            @Override
+            protected void printComponent(Graphics g) {
+                super.printComponent(g);
+                g.drawLine(0,0,500,300);
+            }
+        };
+        panel.setPreferredSize(new Dimension(500, 300));
         add(panel);
     }
 

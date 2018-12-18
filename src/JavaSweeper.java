@@ -1,11 +1,14 @@
 import sweeper.Box;
 import sweeper.Coord;
+import sweeper.Game;
 import sweeper.Ranges;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class JavaSweeper extends JFrame {
+
+    private Game game;
 
     private final int COLS = 9;
     private final int ROWS = 9;
@@ -17,7 +20,7 @@ public class JavaSweeper extends JFrame {
     }
 
     private JavaSweeper() {
-        Ranges.setSize(COLS, ROWS);
+        game = new Game(COLS, ROWS);
         setImages();
         initPanel();
         initFrame();

@@ -23,8 +23,8 @@ public class JavaSweeper extends JFrame {
     private void initPanel() {
         panel = new JPanel() {
             @Override
-            protected void printComponent(Graphics g) {
-                super.printComponent(g);
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
                 g.drawLine(0,0,500,300);
             }
         };

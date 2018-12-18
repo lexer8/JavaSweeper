@@ -25,8 +25,10 @@ public class JavaSweeper extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.drawImage(getImage("Bomb"),0,0,this);
-                g.drawImage(getImage("num1"),IMAGE_SIZE,0,this);
+                for (Box box : Box.values()){
+                    g.drawImage(getImage(box.name().toLowerCase()),
+                            box.ordinal() * IMAGE_SIZE,0,this);
+                }
             }
         };
         panel.setPreferredSize(new Dimension(

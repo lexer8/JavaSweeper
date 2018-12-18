@@ -28,8 +28,8 @@ public class JavaSweeper extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                for (Coord coord : Ranges.getAllCoords()){
-                    g.drawImage((Image) Box.FLAGED.image,
+                for (Coord coord : Ranges.getAllCoords()) {
+                    g.drawImage((Image) Box.values()[(coord.x + coord.y) % Box.values().length].image,
                             coord.x * IMAGE_SIZE,
                             coord.y * IMAGE_SIZE, this);
                 }

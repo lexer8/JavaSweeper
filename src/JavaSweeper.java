@@ -25,7 +25,7 @@ public class JavaSweeper extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.drawLine(0,0,500,300);
+                g.drawImage(getImage("Bomb"),0,0,this);
             }
         };
         panel.setPreferredSize(new Dimension(

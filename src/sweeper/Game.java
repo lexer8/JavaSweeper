@@ -12,6 +12,6 @@ public class Game {
     }
 
     public Box getBox(Coord coord) {
-        return bombMap.matrix[coord.x][coord.y];
+        return bombMap.get(coord);
     }
 }

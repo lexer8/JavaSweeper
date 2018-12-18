@@ -13,7 +13,7 @@ public class Ranges {
         setSize(size);
     }
 
-    static Coord getSize() {
+    public static Coord getSize() {
         return size;
     }
 }

@@ -10,7 +10,9 @@ class Bomb {
 
     void start() {
         bombMap = new Matrix(Box.ZERO);
-        placeBomb();
+        for (int j=0; j<totalBombs; j++){
+            placeBomb();
+        }
     }
 
     Box get(Coord coord){

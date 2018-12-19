@@ -18,6 +18,6 @@ class Bomb {
     }
 
     void placeBomb(){
-        bombMap.set(new Coord(4, 4), Box.BOMB);
+        bombMap.set(Ranges.getRandomCoord(), Box.BOMB);
     }
 }

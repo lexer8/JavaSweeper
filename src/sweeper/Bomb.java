@@ -20,10 +20,18 @@ class Bomb {
     }
 
     private void placeBomb() {
-        Coord coord = Ranges.getRandomCoord();
-        bombMap.set(coord, Box.BOMB);
 
-        incNumbersAroungBomb(coord);
+        while (true){
+            Coord coord = Ranges.getRandomCoord();
+
+            if (Box.BOMB == bombMap.get(coord)){
+                continue;
+            }
+
+            bombMap.set(coord, Box.BOMB);
+            incNumbersAroungBomb(coord);
+            break;
+        }
     }
 
     private void incNumbersAroungBomb(Coord coord) {

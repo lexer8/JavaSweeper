@@ -40,6 +40,10 @@ public class JavaSweeper extends JFrame {
                 }
             }
         };
+
+        game.pressLeftButton(new Coord(4, 4));
+        game.pressRightButton(new Coord(7, 7));
+
         panel.setPreferredSize(new Dimension(
                 Ranges.getSize().x * IMAGE_SIZE,
                 Ranges.getSize().y * IMAGE_SIZE));

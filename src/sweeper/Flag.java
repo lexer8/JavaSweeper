@@ -16,4 +16,12 @@ class Flag {
     Box get(Coord coord) {
         return flagMap.get(coord);
     }
+
+    void setOpenedToBox(Coord coord) {
+
+    }
+
+    void setFlaggedToBox(Coord coord) {
+
+    }
 }

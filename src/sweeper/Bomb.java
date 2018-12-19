@@ -10,16 +10,16 @@ class Bomb {
 
     void start() {
         bombMap = new Matrix(Box.ZERO);
-        for (int j=0; j<totalBombs; j++){
+        for (int j = 0; j < totalBombs; j++) {
             placeBomb();
         }
     }
 
-    Box get(Coord coord){
+    Box get(Coord coord) {
         return bombMap.get(coord);
     }
 
-    void placeBomb(){
+    private void placeBomb() {
         bombMap.set(Ranges.getRandomCoord(), Box.BOMB);
     }
 }

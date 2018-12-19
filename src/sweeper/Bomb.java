@@ -20,6 +20,10 @@ class Bomb {
         return bombMap.get(coord);
     }
 
+    public int getTotalBombs() {
+        return totalBombs;
+    }
+
     private void fixBombsCount() {
         int maxBombs = Ranges.getSize().x * Ranges.getSize().y / 2;
         if (totalBombs>maxBombs){

@@ -53,8 +53,10 @@ public class Game {
 
                 switch (bomb.get(coord)) {
 
-                    case ZERO:
+                    case ZERO:{
+                        openBoxesAroundZero(coord);
                         break;
+                    }
                     case BOMB:
                         break;
                     default: {
@@ -63,6 +65,14 @@ public class Game {
                     }
                 }
 
+        }
+    }
+
+    private void openBoxesAroundZero(Coord coord){
+//        System.out.println(coord.x + " " + coord.y);
+        flag.setOpenedToBox(coord);
+        for (Coord around : Ranges.getCoordsAround(coord)){
+            openBox(around);
         }
     }
 }

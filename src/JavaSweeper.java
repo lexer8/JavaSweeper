@@ -35,7 +35,7 @@ public class JavaSweeper extends JFrame {
 
     private void initLabel() {
         label = new JLabel(getMessage());
-        Font font = new Font("Tahoma", Font.BOLD, 20);
+        Font font = new Font("Tahoma", Font.BOLD, 18);
         label.setFont(font);
         add(label, BorderLayout.SOUTH);
     }
@@ -111,7 +111,7 @@ public class JavaSweeper extends JFrame {
     private String getMessage(){
         switch (game.getState()) {
             case BOMBED: return "Game over! You lose!";
-            case WINNER: return "Congratulations! All bombs have been marked";
+            case WINNER: return "Congratulations! All bombs have been marked!";
             case PLAYED:
             default    : return "Welcome!";
         }

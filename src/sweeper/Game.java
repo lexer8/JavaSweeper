@@ -27,14 +27,42 @@ public class Game {
     }
 
     public void pressLeftButton(Coord coord) {
-        flag.setOpenedToBox(coord);
+        openBox(coord);
+//        flag.setOpenedToBox(coord);
+//        state = GameState.BOMBED;
     }
 
     public void pressRightButton(Coord coord) {
         flag.toggleFlaggedToBox(coord);
+        state = GameState.WINNER;
     }
 
     public GameState getState() {
         return state;
+    }
+
+    private void openBox(Coord coord) {
+
+        switch (flag.get(coord)) {
+
+            case OPENED:
+                break;
+            case FLAGED:
+                break;
+            case CLOSED:
+
+                switch (bomb.get(coord)) {
+
+                    case ZERO:
+                        break;
+                    case BOMB:
+                        break;
+                    default: {
+                        flag.setOpenedToBox(coord);
+                        break;
+                    }
+                }
+
+        }
     }
 }

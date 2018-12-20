@@ -52,4 +52,12 @@ class Flag {
             }
         }
     }
+
+    void setFlagedToLastClosedBoxes() {
+        for (Coord coord : Ranges.getAllCoords()){
+            if (Box.CLOSED == flagMap.get(coord)){
+                setFlaggedToBox(coord);
+            }
+        }
+    }
 }

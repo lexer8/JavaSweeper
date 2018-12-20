@@ -28,17 +28,22 @@ public class Game {
 
     public void pressLeftButton(Coord coord) {
         openBox(coord);
-//        flag.setOpenedToBox(coord);
-//        state = GameState.BOMBED;
     }
 
     public void pressRightButton(Coord coord) {
         flag.toggleFlaggedToBox(coord);
-        state = GameState.WINNER;
     }
 
     public GameState getState() {
         return state;
+    }
+
+    public int getTotalBombs() {
+        return bomb.getTotalBombs();
+    }
+
+    public int getTotalFlaged() {
+        return flag.getTotalFlaged();
     }
 
     private void openBox(Coord coord) {
@@ -53,7 +58,7 @@ public class Game {
 
                 switch (bomb.get(coord)) {
 
-                    case ZERO:{
+                    case ZERO: {
                         openBoxesAroundZero(coord);
                         break;
                     }
@@ -68,10 +73,10 @@ public class Game {
         }
     }
 
-    private void openBoxesAroundZero(Coord coord){
+    private void openBoxesAroundZero(Coord coord) {
 //        System.out.println(coord.x + " " + coord.y);
         flag.setOpenedToBox(coord);
-        for (Coord around : Ranges.getCoordsAround(coord)){
+        for (Coord around : Ranges.getCoordsAround(coord)) {
             openBox(around);
         }
     }

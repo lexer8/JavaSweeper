@@ -34,7 +34,7 @@ public class JavaSweeper extends JFrame {
     }
 
     private void initLabel() {
-        label = new JLabel("Welcome!");
+        label = new JLabel(getMessage());
         Font font = new Font("Tahoma", Font.BOLD, 20);
         label.setFont(font);
         add(label, BorderLayout.SOUTH);
@@ -75,6 +75,7 @@ public class JavaSweeper extends JFrame {
                         break;
                     }
                 }
+                label.setText(getMessage());
                 panel.repaint();
             }
         });
@@ -105,5 +106,14 @@ public class JavaSweeper extends JFrame {
         String filename = "img/" + name + ".png";
         ImageIcon icon = new ImageIcon(getClass().getResource(filename));
         return icon.getImage();
+    }
+
+    private String getMessage(){
+        switch (game.getState()) {
+            case BOMBED: return "Game over! You lose!";
+            case WINNER: return "Congratulations! All bombs have been marked";
+            case PLAYED:
+            default    : return "Welcome!";
+        }
     }
 }

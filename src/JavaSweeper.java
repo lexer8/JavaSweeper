@@ -16,7 +16,9 @@ public class JavaSweeper extends JFrame {
     private final int ROWS = 9;
     private final int BOMBS = 10;
     private final int IMAGE_SIZE = 50;
+
     private JPanel panel;
+    private JLabel label;
 
     public static void main(String[] args) {
         new JavaSweeper();
@@ -27,7 +29,15 @@ public class JavaSweeper extends JFrame {
         game.start();
         setImages();
         initPanel();
+        initLabel();
         initFrame();
+    }
+
+    private void initLabel() {
+        label = new JLabel("Welcome!");
+        Font font = new Font("Tahoma", Font.BOLD, 20);
+        label.setFont(font);
+        add(label, BorderLayout.SOUTH);
     }
 
     private void initPanel() {
@@ -49,18 +59,18 @@ public class JavaSweeper extends JFrame {
 
                 int x = e.getX() / IMAGE_SIZE;
                 int y = e.getY() / IMAGE_SIZE;
-                Coord coord = new Coord(x,y);
+                Coord coord = new Coord(x, y);
 
-                switch (e.getButton()){
-                    case MouseEvent.BUTTON1 :{
+                switch (e.getButton()) {
+                    case MouseEvent.BUTTON1: {
                         game.pressLeftButton(coord);
                         break;
                     }
-                    case MouseEvent.BUTTON3:{
+                    case MouseEvent.BUTTON3: {
                         game.pressRightButton(coord);
                         break;
                     }
-                    case MouseEvent.BUTTON2:{
+                    case MouseEvent.BUTTON2: {
                         game.start();
                         break;
                     }

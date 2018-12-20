@@ -26,8 +26,8 @@ class Flag {
 
     void toggleFlaggedToBox(Coord coord) {
 
-        switch (flagMap.get(coord)){
-            case FLAGED:{
+        switch (flagMap.get(coord)) {
+            case FLAGED: {
                 setClosedToBox(coord);
                 break;
             }

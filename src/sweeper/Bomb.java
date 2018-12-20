@@ -26,7 +26,7 @@ class Bomb {
 
     private void fixBombsCount() {
         int maxBombs = Ranges.getSize().x * Ranges.getSize().y / 2;
-        if (totalBombs>maxBombs){
+        if (totalBombs > maxBombs) {
             totalBombs = maxBombs;
         }
     }

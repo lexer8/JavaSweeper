@@ -70,8 +70,10 @@ public class Game {
 
         switch (flag.get(coord)) {
 
-            case OPENED:
+            case OPENED: {
+                setOpenedToClosedBoxesAroundNumber(coord);
                 break;
+            }
             case FLAGED:
                 break;
             case CLOSED:
@@ -95,13 +97,25 @@ public class Game {
         }
     }
 
+    private void setOpenedToClosedBoxesAroundNumber(Coord coord) {
+        if (Box.BOMB != bomb.get(coord)) {
+            if (bomb.get(coord).getNumber() == flag.getCountOfFlagedBoxesAround(coord)){
+                for (Coord around : Ranges.getCoordsAround(coord)){
+                    if (flag.get(around) == Box.CLOSED){
+                        openBox(around);
+                    }
+                }
+            }
+        }
+    }
+
     private void openBombs(Coord BombedCoord) {
         flag.setBombedToBox(BombedCoord);
-        for (Coord coord : Ranges.getAllCoords()){
-            if (bomb.get(coord) == Box.BOMB){
-                flag.setOpenedToClosedBox (coord);
+        for (Coord coord : Ranges.getAllCoords()) {
+            if (bomb.get(coord) == Box.BOMB) {
+                flag.setOpenedToClosedBox(coord);
             } else {
-                 flag.setNobombToFlagedBox(coord);
+                flag.setNobombToFlagedBox(coord);
             }
         }
         state = GameState.BOMBED;

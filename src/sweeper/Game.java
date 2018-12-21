@@ -99,9 +99,9 @@ public class Game {
 
     private void setOpenedToClosedBoxesAroundNumber(Coord coord) {
         if (Box.BOMB != bomb.get(coord)) {
-            if (bomb.get(coord).getNumber() == flag.getCountOfFlagedBoxesAround(coord)){
-                for (Coord around : Ranges.getCoordsAround(coord)){
-                    if (flag.get(around) == Box.CLOSED){
+            if (bomb.get(coord).getNumber() == flag.getCountOfFlagedBoxesAround(coord)) {
+                for (Coord around : Ranges.getCoordsAround(coord)) {
+                    if (flag.get(around) == Box.CLOSED) {
                         openBox(around);
                     }
                 }

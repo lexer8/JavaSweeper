@@ -54,8 +54,8 @@ class Flag {
     }
 
     void setFlagedToLastClosedBoxes() {
-        for (Coord coord : Ranges.getAllCoords()){
-            if (Box.CLOSED == flagMap.get(coord)){
+        for (Coord coord : Ranges.getAllCoords()) {
+            if (Box.CLOSED == flagMap.get(coord)) {
                 setFlaggedToBox(coord);
             }
         }
@@ -66,21 +66,21 @@ class Flag {
     }
 
     void setOpenedToClosedBox(Coord coord) {
-        if (Box.CLOSED == flagMap.get(coord)){
+        if (Box.CLOSED == flagMap.get(coord)) {
             flagMap.set(coord, Box.OPENED);
         }
     }
 
     void setNobombToFlagedBox(Coord coord) {
-        if (Box.FLAGED == flagMap.get(coord)){
+        if (Box.FLAGED == flagMap.get(coord)) {
             flagMap.set(coord, Box.NOBOMB);
         }
     }
 
     int getCountOfFlagedBoxesAround(Coord coord) {
         int count = 0;
-        for (Coord around : Ranges.getCoordsAround(coord)){
-            if (flagMap.get(around) == Box.FLAGED){
+        for (Coord around : Ranges.getCoordsAround(coord)) {
+            if (flagMap.get(around) == Box.FLAGED) {
                 count++;
             }
         }

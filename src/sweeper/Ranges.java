@@ -30,7 +30,7 @@ public class Ranges {
 
     static boolean inRange(Coord coord) {
         return coord.x >= 0 && coord.x < size.x &&
-                coord.y >= 0 && coord.y < size.y;
+               coord.y >= 0 && coord.y < size.y;
     }
 
     static Coord getRandomCoord() {

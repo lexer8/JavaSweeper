@@ -101,7 +101,7 @@ public class Game {
             if (bomb.get(coord) == Box.BOMB){
                 flag.setOpenedToClosedBox (coord);
             } else {
-
+                 flag.setNobombToFlagedBox(coord);
             }
         }
         state = GameState.BOMBED;

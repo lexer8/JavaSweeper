@@ -70,4 +70,10 @@ class Flag {
             flagMap.set(coord, Box.OPENED);
         }
     }
+
+    void setNobombToFlagedBox(Coord coord) {
+        if (Box.FLAGED == flagMap.get(coord)){
+            flagMap.set(coord, Box.NOBOMB);
+        }
+    }
 }

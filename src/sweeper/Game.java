@@ -122,7 +122,6 @@ public class Game {
     }
 
     private void openBoxesAroundZero(Coord coord) {
-//        System.out.println(coord.x + " " + coord.y);
         flag.setOpenedToBox(coord);
         for (Coord around : Ranges.getCoordsAround(coord)) {
             openBox(around);
